@@ -1,27 +1,24 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-
-const connectDB = require("./Utils/db");
-const authRoutes = require("./routes/auth");
-const studentRoutes = require("./routes/students");
-const applicationRoutes = require("./routes/applications");
+const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
-
-app.use(cors());
 app.use(express.json());
+app.use(cors());
+app.listen(5000, () => {
+    console.log("Server is running on port 5000");
+}
+);
 
-app.use("/api/auth", authRoutes);
-app.use("/api/students", studentRoutes);
-app.use("/api/applications", applicationRoutes);
+const UserRouter = require("./Routers/UserRouters");
+app.use("/api/user", UserRouter);
 
-app.get("/", (req, res) => {
-  res.json({ message: "CampusFlow Backend Running ✅" });
-});
-
-connectDB().then(() => {
-  app.listen(process.env.PORT, () =>
-    console.log(`🚀 Server running on http://localhost:${process.env.PORT}`)
-  );
+mongoose
+.connect(process.env.MONGO_URL)
+.then(() =>{
+    console.log("Connected to MongoDB");
+})
+.catch((err) =>{
+    console.log("Error connecting to MongoDB", err);
 });
