@@ -17,31 +17,31 @@
     },
     {
       "src": "/static/(.*)",
-      "dest": "/frontend/static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/favicon.ico",
-      "dest": "/frontend/favicon.ico"
+      "dest": "/favicon.ico"
     },
     {
       "src": "/manifest.json",
-      "dest": "/frontend/manifest.json"
+      "dest": "/manifest.json"
     },
     {
       "src": "/logo192.png",
-      "dest": "/frontend/logo192.png"
+      "dest": "/logo192.png"
     },
     {
       "src": "/logo512.png",
-      "dest": "/frontend/logo512.png"
+      "dest": "/logo512.png"
     },
     {
       "src": "/robots.txt",
-      "dest": "/frontend/robots.txt"
+      "dest": "/robots.txt"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "dest": "/index.html"
     }
   ]
 }
