@@ -1,0 +1,131 @@
+/* CampusFlow Form UI (refactored, consistent design system) */
+
+/* CSS variables: fallback to current theme if root vars are not present */
+:root {
+  --ui-text: #0b1220;
+  --ui-muted: #4b5563;
+  --ui-border: rgba(0, 0, 0, 0.10);
+  --ui-border-strong: rgba(0, 0, 0, 0.18);
+  --ui-focus: rgba(255, 213, 74, 0.45);
+  --ui-accent: #ffd54a;
+  --ui-radius: 16px;
+}
+
+/* Form shell */
+.campus-form,
+.page-container .campus-form {
+  background: #fff;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.05);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: var(--ui-text);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--ui-border-strong);
+  outline: none;
+  background: #fff;
+  color: var(--ui-text);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(11, 18, 32, 0.45);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(255, 213, 74, 0.95);
+  box-shadow: 0 0 0 4px var(--ui-focus);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-btn {
+  width: 100%;
+  background: var(--ui-accent);
+  border: none;
+  padding: 13px 16px;
+  border-radius: 14px;
+  font-weight: 950;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 10px 30px rgba(255, 213, 74, 0.25);
+  color: #0b1220;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 14px 34px rgba(255, 213, 74, 0.35);
+}
+
+.form-btn:active {
+  transform: translateY(0px);
+}
+
+.form-footer {
+  margin-top: 18px;
+  color: var(--ui-muted);
+  font-weight: 700;
+}
+
+.form-footer a {
+  color: #0b1220;
+  font-weight: 950;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.success-box {
+  background: #ecfdf3;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #0a6a2a;
+  padding: 16px;
+  border-radius: 16px;
+  font-weight: 850;
+}
+
+@media (max-width: 720px) {
+  .campus-form,
+  .page-container .campus-form {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+

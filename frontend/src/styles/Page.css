@@ -1,0 +1,80 @@
+/* CampusFlow Page UI (refactored, consistent design system) */
+
+:root {
+  --ui-accent: #ffd54a;
+  --ui-text: #0b1220;
+  --ui-muted: #4b5563;
+  --ui-border: rgba(0, 0, 0, 0.10);
+  --ui-radius: 16px;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 44px auto;
+  padding: 0 16px;
+}
+
+.page-container.narrow {
+  max-width: 720px;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ui-text);
+  letter-spacing: -0.02em;
+  font-weight: 950;
+}
+
+.gold {
+  color: #b8860b;
+}
+
+.page-sub {
+  color: var(--ui-muted);
+  margin: 0 0 22px;
+  line-height: 1.7;
+  font-weight: 650;
+  max-width: 62ch;
+}
+
+/* Reusable card styles */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.04);
+}
+
+.info-icon {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* Success box spacing if used outside forms */
+.success-box {
+  margin: 10px 0 14px;
+}
+
+@media (max-width: 720px) {
+  .page-container {
+    margin: 28px auto;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .page-sub {
+    margin-bottom: 16px;
+  }
+}
+
