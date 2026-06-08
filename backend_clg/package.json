@@ -2,10 +2,10 @@
   "name": "college-management-backend",
   "version": "1.0.0",
   "description": "College Management Backend API",
-  "main": "server.js",
+  "main": "Server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node Server.js",
+    "dev": "nodemon Server.js"
   },
   "keywords": ["college", "management", "nodejs", "express", "mongodb", "jwt"],
   "author": "",
