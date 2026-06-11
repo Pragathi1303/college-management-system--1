@@ -1,51 +1,11 @@
-import api from "../utils/axios";
+import axiosInstance from './axios';
 
-/**
- * Get all students.
- * @returns {Promise<Array>}
- */
-export async function getAllStudents() {
-  const response = await api.get("/api/students");
-  return response.data;
-}
+const studentService = {
+  getAll: (params) => axiosInstance.get('/admin/students', { params }),
+  getById: (id) => axiosInstance.get(`/admin/students/${id}`),
+  create: (data) => axiosInstance.post('/admin/students', data),
+  update: (id, data) => axiosInstance.put(`/admin/students/${id}`, data),
+  delete: (id) => axiosInstance.delete(`/admin/students/${id}`),
+};
 
-/**
- * Search students by query string.
- * @param {string} query
- * @returns {Promise<Array>}
- */
-export async function searchStudents(query) {
-  const response = await api.get(`/api/students/search?q=${encodeURIComponent(query)}`);
-  return response.data;
-}
-
-/**
- * Add a new student.
- * @param {Object} studentData - { studentId, name, gender, dob, department, year, email, phone }
- * @returns {Promise<Object>}
- */
-export async function addStudent(studentData) {
-  const response = await api.post("/api/students", studentData);
-  return response.data;
-}
-
-/**
- * Update an existing student.
- * @param {string} studentId
- * @param {Object} studentData
- * @returns {Promise<Object>}
- */
-export async function updateStudent(studentId, studentData) {
-  const response = await api.put(`/api/students/${studentId}`, studentData);
-  return response.data;
-}
-
-/**
- * Delete a student by studentId.
- * @param {string} studentId
- * @returns {Promise<Object>}
- */
-export async function deleteStudent(studentId) {
-  const response = await api.delete(`/api/students/${studentId}`);
-  return response.data;
-}
+export default studentService;

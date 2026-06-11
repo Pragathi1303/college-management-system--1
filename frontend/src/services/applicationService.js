@@ -6,6 +6,6 @@ import api from "../utils/axios";
  * @returns {Promise<Object>}
  */
 export async function submitApplication(applicationData) {
-  const response = await api.post("/api/applications", applicationData);
+  const response = await api.post("/applications", applicationData);
   return response.data;
 }

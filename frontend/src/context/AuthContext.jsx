@@ -15,13 +15,13 @@ export function AuthProvider({ children }) {
   });
 
   const [isAuthenticated, setIsAuthenticated] = useState(!!session?.token);
-  const [isAdmin, setIsAdmin] = useState(session?.user?.role === "admin");
+  const [isAdmin, setIsAdmin] = useState(session?.user?.role === "admin" || session?.user?.role === "superadmin");
   const [user, setUser] = useState(session?.user || null);
 
   // Update derived state when session changes
   useEffect(() => {
     setIsAuthenticated(!!session?.token);
-    setIsAdmin(session?.user?.role === "admin");
+    setIsAdmin(session?.user?.role === "admin" || session?.user?.role === "superadmin");
     setUser(session?.user || null);
   }, [session]);
 

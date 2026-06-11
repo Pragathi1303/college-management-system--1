@@ -5,7 +5,7 @@ import api from "../utils/axios";
  * @returns {Promise<Array>}
  */
 export async function getAllStaff() {
-  const response = await api.get("/api/staff");
+  const response = await api.get("/staff");
   return response.data;
 }
 
@@ -15,7 +15,7 @@ export async function getAllStaff() {
  * @returns {Promise<Array>}
  */
 export async function searchStaff(query) {
-  const response = await api.get(`/api/staff/search?q=${encodeURIComponent(query)}`);
+  const response = await api.get(`/staff/search?q=${encodeURIComponent(query)}`);
   return response.data;
 }
 
@@ -25,7 +25,7 @@ export async function searchStaff(query) {
  * @returns {Promise<Object>}
  */
 export async function addStaff(staffData) {
-  const response = await api.post("/api/staff", staffData);
+  const response = await api.post("/staff", staffData);
   return response.data;
 }
 
@@ -36,7 +36,7 @@ export async function addStaff(staffData) {
  * @returns {Promise<Object>}
  */
 export async function updateStaff(staffId, staffData) {
-  const response = await api.put(`/api/staff/${staffId}`, staffData);
+  const response = await api.put(`/staff/${staffId}`, staffData);
   return response.data;
 }
 
@@ -46,6 +46,6 @@ export async function updateStaff(staffId, staffData) {
  * @returns {Promise<Object>}
  */
 export async function deleteStaff(staffId) {
-  const response = await api.delete(`/api/staff/${staffId}`);
+  const response = await api.delete(`/staff/${staffId}`);
   return response.data;
 }

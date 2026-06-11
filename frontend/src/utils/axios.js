@@ -3,7 +3,7 @@ import axios from "axios";
 const API_BASE =
   process.env.REACT_APP_API_URL ||
   (typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? "http://localhost:5000"
+    ? "http://localhost:5001"
     : "");
 
 const api = axios.create({

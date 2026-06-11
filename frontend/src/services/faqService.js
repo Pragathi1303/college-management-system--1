@@ -5,6 +5,6 @@ import api from "../utils/axios";
  * @returns {Promise<Array<{q, a}>>}
  */
 export async function getFAQs() {
-  const response = await api.get("/api/faq");
+  const response = await api.get("/faq");
   return response.data;
 }
